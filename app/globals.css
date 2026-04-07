@@ -128,3 +128,20 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  @keyframes spotlight {
+    0%, 100% {
+      transform: translateX(-6%) translateY(0) scale(0.96);
+      opacity: 0.65;
+    }
+    50% {
+      transform: translateX(6%) translateY(-10px) scale(1);
+      opacity: 0.8;
+    }
+  }
+
+  .animate-spotlight {
+    animation: spotlight 20s ease-in-out infinite;
+  }
+}
