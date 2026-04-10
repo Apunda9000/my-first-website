@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { GitBranch, Link as LinkIcon, MessageCircle } from "lucide-react";
 import { Spotlight } from "@/components/ui/spotlight";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
@@ -71,19 +72,38 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mt-16 flex-1 items-center justify-center lg:mt-0 lg:flex">
-          <div className="relative mx-auto flex h-[360px] w-[360px] items-center justify-center rounded-full bg-gradient-to-br from-sky-500/10 via-transparent to-violet-500/10 p-6 shadow-[0_30px_80px_rgba(56,189,248,0.18)]">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-500/20 via-transparent to-violet-500/20 blur-3xl" />
-            <Image
-              src="/profile.jpg"
-              alt="Belinda profile photo"
-              width={320}
-              height={320}
-              className="relative rounded-full ring-2 ring-primary/20"
-            />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="relative w-full max-w-[550px] aspect-square mx-auto order-1 lg:order-2"
+        >
+          {/* Subtle glow behind image */}
+          <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-3xl -z-10 scale-95" />
+
+          {/* Online badge */}
+          <div className="absolute top-4 right-4 z-10">
+            <Badge className="bg-background/80 backdrop-blur-sm border border-border/40 flex items-center gap-1.5 px-2 py-1">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-xs font-medium">Online</span>
+            </Badge>
           </div>
-        </div>
+
+          <Image
+            src="/IMG_0593.jpg"
+            alt="Profile Photo"
+            fill
+            priority
+            className="object-cover object-top rounded-2xl shadow-2xl border border-border/40
+               hover:scale-[1.02] transition-transform duration-500"
+          />
+        </motion.div>
       </motion.section>
+
+      <ProjectsSection />
     </div>
   );
 }
