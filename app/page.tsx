@@ -52,11 +52,6 @@ export default function Home() {
                 View My Work
               </Button>
             </Link>
-            <Link href="/contact" className="inline-flex w-full sm:w-auto">
-              <Button variant="outline" className="w-full sm:w-auto">
-                Contact Me
-              </Button>
-            </Link>
           </div>
 
           <div className="mt-8 flex items-center gap-4 text-foreground">
