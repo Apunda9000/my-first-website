@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
 ];
 
 const SOCIAL_LINKS = [
@@ -22,7 +21,7 @@ const SOCIAL_LINKS = [
 ] as const;
 
 const CONTACT = {
-  email: "benak1811@gmail.com",
+  email: "benak811@gmail.com",
   location: "Mombasa, KE (Remote)",
   status: "open",
 } as const;
