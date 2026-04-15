@@ -5,10 +5,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { GitBranch, Link as LinkIcon, MessageCircle } from "lucide-react";
+import { CheckSquare, GitBranch, Link as LinkIcon, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Spotlight } from "@/components/ui/spotlight";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import ProjectsSection from "@/components/ProjectsSection";
+
+const CONTACT = {
+  email: "benak811@gmail.com",
+  location: "Mombasa, KE (Remote)",
+  status: "open",
+} as const;
 
 export default function Home() {
   return (
@@ -97,6 +103,32 @@ export default function Home() {
           />
         </motion.div>
       </motion.section>
+
+      <section className="relative mx-auto w-full max-w-7xl px-6 pb-12">
+        <div className="rounded-2xl border border-border/40 bg-background/60 px-5 py-4 text-sm text-muted-foreground shadow-sm backdrop-blur-sm">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex min-w-0 items-center gap-2">
+            <Mail className="h-4 w-4 shrink-0 text-foreground/70" />
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="truncate text-foreground/90 transition-colors hover:text-primary"
+              >
+                {CONTACT.email}
+              </a>
+            </div>
+            <div className="hidden h-4 w-px bg-border/60 sm:block" />
+            <div className="flex min-w-0 items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-foreground/70" />
+              <span className="truncate">{CONTACT.location}</span>
+            </div>
+            <div className="hidden h-4 w-px bg-border/60 sm:block" />
+            <div className="flex items-center gap-2 text-foreground">
+              <CheckSquare className="h-4 w-4 text-emerald-500" />
+              <span className="capitalize text-muted-foreground">{CONTACT.status}</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <ProjectsSection />
     </div>

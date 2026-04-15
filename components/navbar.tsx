@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
-import { CheckSquare, Mail, MapPin, Menu, Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
@@ -19,12 +19,6 @@ const SOCIAL_LINKS = [
   { href: "https://www.linkedin.com/", label: "LinkedIn", icon: IconBrandLinkedin },
   { href: "https://twitter.com/", label: "Twitter", icon: IconBrandX },
 ] as const;
-
-const CONTACT = {
-  email: "benak811@gmail.com",
-  location: "Mombasa, KE (Remote)",
-  status: "open",
-} as const;
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -66,23 +60,6 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex min-w-0 items-center gap-4">
-          <div className="flex min-w-0 items-center gap-4 rounded-2xl border border-border/40 bg-background/50 px-4 py-2 text-sm text-muted-foreground">
-            <div className="flex min-w-0 items-center gap-2">
-              <Mail className="h-4 w-4 shrink-0 text-foreground/70" />
-              <span className="truncate">{CONTACT.email}</span>
-            </div>
-            <div className="h-4 w-px bg-border/60" />
-            <div className="flex min-w-0 items-center gap-2">
-              <MapPin className="h-4 w-4 shrink-0 text-foreground/70" />
-              <span className="truncate">{CONTACT.location}</span>
-            </div>
-            <div className="h-4 w-px bg-border/60" />
-            <div className="flex items-center gap-2 text-foreground">
-              <CheckSquare className="h-4 w-4 text-emerald-500" />
-              <span className="text-muted-foreground">{CONTACT.status}</span>
-            </div>
-          </div>
-
           <Button
             variant="ghost"
             size="icon"
@@ -132,26 +109,6 @@ export default function Navbar() {
                         </Button>
                       );
                     })}
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Info
-                  </div>
-                  <div className="rounded-2xl border border-border/40 bg-background/40 px-4 py-3 text-sm text-muted-foreground space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Mail className="h-4 w-4 text-foreground/70" />
-                      <span className="truncate">{CONTACT.email}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-foreground/70" />
-                      <span className="truncate">{CONTACT.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckSquare className="h-4 w-4 text-emerald-500" />
-                      <span className="text-muted-foreground">{CONTACT.status}</span>
-                    </div>
                   </div>
                 </div>
 
